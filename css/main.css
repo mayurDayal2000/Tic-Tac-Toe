@@ -1,0 +1,156 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Outfit";
+}
+
+:root {
+  --dark-navy: hsla(200, 32%, 15%, 1);
+  --semi-dark-navy: hsla(200, 35%, 19%, 1);
+  --silver: hsla(199, 24%, 73%, 1);
+  --light-yellow: hsla(39, 88%, 58%, 1);
+  --light-yellow-hover: hsla(39, 100%, 69%, 1);
+  --light-blue: hsla(178, 60%, 48%, 1);
+  --light-blue-hover: hsla(178, 76%, 66%, 1);
+}
+
+/* mobile screens */
+#root {
+  background-color: var(--dark-navy);
+  width: 100%;
+  min-height: 100vh;
+  padding: 0 1.5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  width: 100%;
+  max-width: 380px;
+}
+
+.new-game-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 40px;
+}
+
+img[alt="game logo"] {
+  width: 72px;
+  height: auto;
+}
+
+.mark-picker {
+  width: 100%;
+  background-color: var(--semi-dark-navy);
+  box-shadow: inset 0px -8px 0px #10212a;
+  border-radius: 15px;
+  padding: 24px 24px 30px;
+}
+
+.mark-picker h1,
+.mark-picker p {
+  font-weight: 700;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--silver);
+}
+
+.picker-btns {
+  margin: 24px 0 17px;
+  padding: 8px;
+
+  display: flex;
+  align-items: center;
+  background-color: var(--dark-navy);
+  border-radius: 10px;
+}
+
+.picker-btns button {
+  flex-basis: 50%;
+  min-height: 54px;
+  background-color: transparent;
+  border: transparent;
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s ease-in;
+}
+
+button.active {
+  background-color: var(--silver);
+}
+
+.active > svg path {
+  fill: var(--dark-navy);
+}
+
+.mark-picker p {
+  font-size: 14px;
+  letter-spacing: 0.8px;
+  mix-blend-mode: normal;
+  opacity: 0.5;
+}
+
+.vs-cpu-btn,
+.vs-player-btn {
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 15px;
+
+  font-weight: 700;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 1px;
+  color: var(--dark-navy);
+
+  padding: 14px 14px 22px;
+  text-transform: uppercase;
+
+  transition: all 150ms ease-in;
+  cursor: pointer;
+}
+
+.vs-cpu-btn {
+  margin-bottom: 16px;
+  background-color: var(--light-yellow);
+  box-shadow: inset 0px -8px 0px #cc8b13;
+}
+
+.vs-player-btn {
+  background: var(--light-blue);
+  box-shadow: inset 0px -8px 0px #118c87;
+}
+
+.vs-cpu-btn:hover,
+.vs-player-btn:hover {
+  box-shadow: none;
+  padding-bottom: 14px;
+}
+
+.vs-cpu-btn:hover {
+  background-color: var(--light-yellow-hover);
+}
+
+.vs-player-btn:hover {
+  background-color: var(--light-blue-hover);
+}
+
+@media (min-width: 998px) {
+  .vs-cpu-btn,
+  .vs-player-btn {
+    font-size: 20px;
+  }
+}
